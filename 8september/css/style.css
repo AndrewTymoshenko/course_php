@@ -1,0 +1,30 @@
+* {
+	font-family: Arial;
+}
+
+div {
+	margin: 10px;
+}
+
+.bottom-border {
+	border-bottom: 1px solid black;
+}
+
+.header {
+	color: #00f;
+}
+
+.menu {
+	padding: 10px;
+}
+
+.footer {
+	background: #bbb;
+	padding: 10px;
+	text-align: center;
+}
+
+.container {
+	margin: 0 auto;
+	width: 500px;
+}
