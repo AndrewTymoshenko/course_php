@@ -1,6 +1,8 @@
 <?php
 
-	echo "<table><tr>";
+	/*Вывести таблицу умножения*/
+
+	echo "<table border = 10px;><tr>";
 
 	for ($i=1; $i <= 10; $i++) {
 		for ($j=1; $j <= 10; $j++) {
