@@ -1,0 +1,12 @@
+#!/bin/bash
+
+i=1
+RANGE=13
+
+for X in $(seq $i $((i+RANGE-1)));
+do
+	>/var/www/html/course_php/homeworks/functions_forms_tasks/$i.php
+	let "i+=1"
+done
+
+
