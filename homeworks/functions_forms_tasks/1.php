@@ -4,6 +4,9 @@
 	<title></title>
 </head>
 <body>
+<p>Создать форму с двумя элементами textarea. При отправке формы скрипт должен выдавать только те слова,
+    которые есть и в первом и во втором поле ввода. Реализацию это логики необходимо поместить в функцию
+    getCommonWords($a, $b), которая будет возвращать массив с общими словами.</p>
 	<form action="1.php" method="get" accept-charset="utf-8">
 		<textarea name="first"></textarea>
 		<textarea name="second"></textarea>

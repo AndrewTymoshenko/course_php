@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<form action="2.php" method="get" accept-charset="utf-8">
+	<form action="2.php" method="post" accept-charset="utf-8">
 		<textarea name="text"></textarea>
 		<input type="submit">
 	</form>
@@ -18,7 +18,10 @@
 /*Создать форму с элементом textarea.
 При отправке формы скрипт должен выдавать ТОП3 длинных слов в тексте. Реализовать с помощью функции.*/
 
-$arr = explode(" ", $_GET['text']);
+
+if (!empty($_POST['text'])) {
+    $arr = explode(" ", $_POST['text']);
+} else $arr = NULL;
 
 $sortByLen = function ($a, $b)
 {
@@ -29,14 +32,16 @@ $sortByLen = function ($a, $b)
 
 
 
-function biggestWords(array $a){
-    global $sortByLen;
-    uasort($a, $sortByLen);
-    $arr = array_reverse($a);
+function biggestWords($a){
+    if ($a != NULL){
+        global $sortByLen;
+        uasort($a, $sortByLen);
+        $arr = array_reverse($a);
 
-    for ($i = 0; $i < 3; $i++) {
-        echo $arr[$i] . "<br>";
-    }
+        for ($i = 0; $i < 3; $i++) {
+            echo $arr[$i] . "<br>";
+        }
+    } else echo "Введите текст";
 }
 
 echo "<pre>";
