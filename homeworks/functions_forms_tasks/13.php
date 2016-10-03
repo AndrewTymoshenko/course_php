@@ -14,3 +14,33 @@
  * груша – 5
  * слива - 3
 */
+
+$str = 'яблоко черешня вишня вишня черешня груша яблоко черешня вишня яблоко вишня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня черешня груша яблоко черешня вишня';
+
+$apple = 'яблоко';
+$cherry = 'черешня';
+$pear = 'груша';
+$plum = 'слива';
+
+$appleCount = $cherryCount = $pearCount = $plumCount = 0;
+
+$arr = explode(" ", $str);
+
+foreach ($arr as $item) {
+    if ($item == $apple) {
+        $appleCount++;
+    } elseif ($item == $cherry) {
+        $cherryCount++;
+    } elseif ($item == $pear) {
+        $pearCount++;
+    } else $plumCount++;
+}
+
+$count = [$apple=>$appleCount, $pear=>$pearCount, $plum=>$plumCount, $cherry => $cherryCount];
+
+
+arsort($count);
+
+foreach ($count as $index => $item) {
+    echo "{$item} - {$index}<br>";
+}
