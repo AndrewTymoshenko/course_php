@@ -4,6 +4,8 @@
     <title></title>
 </head>
 <body>
+<p>Создать форму с элементом textarea.
+При отправке формы скрипт должен выдавать ТОП3 длинных слов в тексте. Реализовать с помощью функции.</p>
 
 	<form action="2.php" method="post" accept-charset="utf-8">
 		<textarea name="text"></textarea>

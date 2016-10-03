@@ -11,7 +11,14 @@
 <p>Есть текстовый файл. Необходимо удалить из него все слова, длина которых превыщает N символов.
 Значение N задавать через форму.
 Проверить работу на кириллических строках - найти ошибку, найти решение.</p>
-<br><br>
+<hr>
+<form action="3.php" method="post">
+    <input type="text" name="addr" placeholder="Enter file address">
+    <br><br>
+    <input type="number" name="size" placeholder="Enter size">
+    <br><br>
+    <input type="submit" value="--- Send ---">
+</form>
 </body>
 </html>
 
@@ -20,3 +27,56 @@
 /*Есть текстовый файл. Необходимо удалить из него все слова, длина которых превыщает N символов.
 Значение N задавать через форму.
 Проверить работу на кириллических строках - найти ошибку, найти решение.*/
+
+if (!empty($_POST['addr'])) {
+    $address = $_POST['addr'];
+} else $address = null;
+
+if (!empty($_POST['size'])) {
+    $size = $_POST['size'];
+} else $size = null;
+
+
+
+function delete_word($address, $size)
+{
+    if ($address && $size) {
+        $file = fopen($address, 'r');
+        $text = fread($file, filesize($address));
+        fclose($file);
+        $text = explode(" ", $text);
+
+        echo count($text);
+        for ($i = 0; $i < count($text); $i++) {
+            if (strlen($text[$i]) > $size) {
+                unset($text[$i]);
+            }
+        }
+        echo count($text);
+        //echo strlen($text[49]);
+        //echo $text[49];
+
+        //$file = fopen($_POST['addr'], 'w');
+        echo "<pre>";
+        print_r($text);
+    } else echo "Enter file or size";
+}
+
+delete_word($address, $size);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
