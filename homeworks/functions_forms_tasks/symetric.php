@@ -26,17 +26,33 @@
 /*создать функцию, которая делает число симметричным, если оно не такое ))
 не выходить из раом целого типа, желательно. Например 253 -- > 25352, 26 --> 262*/
 
-
-
-function symetric()
-{
+if (!empty($_GET['numb'])) {
     $number = $_GET['numb'];
-    var_dump($number);
-
+} else {
+    $number = null;
+    echo "Enter number!";
 }
 
+function symetric($number)
+{
+    $arr = [];
+    if ($number != strrev($number)) {
+        $number = str_split($number);
+        for ($i = 0; $i < count($number); $i++) {
+            $arr[] = $number[$i];
+        }
+        array_pop($arr);
+        $number = array_merge($number, array_reverse($arr));
+        $number = (int) implode($number);
+    } else echo "Digit is palindrome";
 
-symetric();
+    echo "<pre>";
+    print_r($number);
+}
+
+symetric($number);
+
+
 
 
 

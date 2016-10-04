@@ -47,9 +47,9 @@ function delete_word($address, $size)
         $text = explode(" ", $text);
 
         echo count($text);
-        for ($i = 0; $i < count($text); $i++) {
-            if (strlen($text[$i]) > $size) {
-                unset($text[$i]);
+        foreach ($text as $index => $item) {
+            if (strlen($item) > $size) {
+                unset($index);
             }
         }
         echo count($text);
