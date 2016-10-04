@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+<p>Написать функцию, которая считает количество уникальных слов в тексте.
+Слова разделяются пробелами. Текст должен вводиться с формы.</p>
 <form action="10.php" method="get">
     <textarea name="text" cols="30" rows="5"></textarea>
     <br>
