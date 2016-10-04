@@ -27,7 +27,10 @@
 if (!empty($_GET['arr_length']) && !empty($_GET['digit']) && $_GET['arr_length'] > 0 && $_GET['digit']) {
     $arr_length = $_GET['arr_length'];
     $digit = $_GET['digit'];
-} else $arr_length = $digit = null;
+} else {
+    $arr_length = $digit = null;
+    echo "Введите данные";
+}
 
 function random($arr_length, $digit)
 {
@@ -36,7 +39,9 @@ function random($arr_length, $digit)
         $arr[] = rand(1, $digit);
     }
     echo "<pre>";
-    print_r($arr);
+    if ($arr) {
+        print_r($arr);
+    }
 }
 
 random($arr_length, $digit);
