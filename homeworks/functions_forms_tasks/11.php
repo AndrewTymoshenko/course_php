@@ -39,9 +39,14 @@
 как ни садитесь, все в музыканты не годитесь. А король-то — голый. А ларчик просто открывался.
 А там хоть трава не расти.';*/
 
-function toUpper()
+if (!empty($_GET['text'])) {
+    $text = $_GET['text'];
+} else $text = null;
+
+
+function toUpper($text)
 {
-    $text = str_split($_GET['text']);
+    $text = str_split($text);
     $text[0] = strtoupper($text[0]);
     for ($i = 0; $i < count($text); $i++) {
         if (preg_match('/[\!\?\.\...]/', $text[$i])) {
@@ -51,6 +56,6 @@ function toUpper()
     echo implode($text);
 }
 
-toUpper();
+toUpper($text);
 
 //todo: reading russian

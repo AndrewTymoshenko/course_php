@@ -31,14 +31,22 @@ echo '<pre>';
 //print_r($arr);
 
 
+if (!empty($_GET['text'])) {
+    $string = $_GET['text'];
+} else $string = null;
+
 
 function uniqWords($string)
 {
     $arr = explode(" ", trim($string));
+    $count = 0;
     $count = count(array_unique($arr));
-    return $count;
+    if (count($arr) == 1) {
+        $count = 0;
+        return $count;
+    } else return $count;
 }
 
-echo uniqWords($_GET['text']);
+echo uniqWords($string);
 
 

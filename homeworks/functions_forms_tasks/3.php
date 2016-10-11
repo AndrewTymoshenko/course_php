@@ -53,8 +53,6 @@ function delete_word($address, $size)
             }
         }
         echo count($text);
-        //echo strlen($text[49]);
-        //echo $text[49];
 
         //$file = fopen($_POST['addr'], 'w');
         echo "<pre>";

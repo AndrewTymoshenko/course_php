@@ -1,0 +1,2 @@
+a:6:{s:8:"username";s:4:"asdf";s:5:"email";s:11:"asdf@php.ua";s:7:"message";s:21:"привет всем";s:7:"publish";s:2:"on";s:8:"datetime";s:19:"2016-10-09 17:09:01";s:13:"publish_email";i:1;}
+a:5:{s:8:"username";s:9:"minuteman";s:5:"email";s:9:"asdf@asdf";s:7:"message";s:17:"ну привет";s:8:"datetime";s:19:"2016-10-09 17:09:22";s:13:"publish_email";i:0;}

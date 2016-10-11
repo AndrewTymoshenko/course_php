@@ -26,10 +26,13 @@
 помощью формы.
  */
 
-
-function str_Rev()
+if (!empty($_GET['strToRev'])) {
+    $strRev = $_GET['strToRev'];
+} else $strRev = null;
+function str_Rev($strRev)
 {
-    print_r(implode(array_reverse(str_split($_GET['strToRev']))));
+    print_r(implode(array_reverse(str_split($strRev))));
 }
 
-str_Rev();
+
+str_Rev($strRev);
