@@ -23,9 +23,13 @@
  * getCommonWords($a, $b), которая будет возвращать массив с общими словами.
  */
 
-$a = $_GET['first'];
-$b = $_GET['second'];
 
+if (!empty($_GET['first']) && !empty($_GET['second'])) {
+	$a = $_GET['first'];
+	$b = $_GET['second'];
+} else {
+	$a = $b = null;
+}
 
 
 function getCommonWords($a, $b) {

@@ -39,7 +39,6 @@ if (!empty($_GET['text'])) {
 function uniqWords($string)
 {
     $arr = explode(" ", trim($string));
-    $count = 0;
     $count = count(array_unique($arr));
     if (count($arr) == 1) {
         $count = 0;

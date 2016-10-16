@@ -1,8 +1,5 @@
 <?php
 
-
-// todo: add checkbox for user wants to publish email
-// add rating to comments +/-, use uniqid()
 define('COMMENTS_DB', 'comments.txt');
 require 'functions.php';
 echo uniqid();;
@@ -13,13 +10,11 @@ if (requestIsPost()) {
 if (formIsValid()) {
 
 $comment = $_POST;
-// $comment['id'] = uniqiid();
 $comment['datetime'] = date('Y-m-d H:i:s');
-// $comment['publish_email'] = 1; // or 0  --- ifPublishEmail()
 $comment = serialize($comment);
 file_put_contents(COMMENTS_DB, $comment . PHP_EOL, FILE_APPEND);
 
-redirect('./index.php?flashMsg=OK');
+redirect('/comments_form?flashMsg=OK');
 }
 
 $flashMsg = 'Fill all the fields plzzz';

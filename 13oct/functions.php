@@ -17,7 +17,7 @@ function get($key, $default = null)
 }
 function requestIsPost()
 {
-	return (bool)$_POST;
+	return strtolower($_SERVER['REQUEST_METHOD']) == 'post';
 }
 function formIsValid()
 {
@@ -46,6 +46,8 @@ function ifPublish()
 }
 function moderate(array &$comments)
 {
+	// todo: use array_walk() instead of foreach
+	// todo: as -> **, beach -> b***h
 	$badWords = ['as', 'beach', 'smuck'];
 	foreach ($comments as &$comment) {
 		$comment['message'] = str_replace($badWords, '***', $comment['message']);
